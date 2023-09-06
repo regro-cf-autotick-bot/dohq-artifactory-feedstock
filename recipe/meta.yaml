@@ -1,5 +1,5 @@
 {% set name = "dohq-artifactory" %}
-{% set version = "0.8.4" %}
+{% set version = "0.9.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dohq-artifactory-{{ version }}.tar.gz
-  sha256: 4c4e31153a771341cd6d21d766e095701aeddcb2da431b502f357258070b443f
+  sha256: a18d44a2e3d61194da2697573c37766e23b036baccb014fdfc8467b9feb4b98b
 
 build:
   number: 0
