@@ -7,21 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dohq-artifactory-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dohq-artifactory-{{ version }}.tar.gz
   sha256: 4c4e31153a771341cd6d21d766e095701aeddcb2da431b502f357258070b443f
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - pyjwt ~=2.0
-    - python >=3.7
+    - python >={{ python_min }}
     - python-dateutil
     - requests
 
@@ -32,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://devopshq.github.io/artifactory/
